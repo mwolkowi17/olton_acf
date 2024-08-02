@@ -6,7 +6,7 @@
         $wyjazd_zimowy = new pojedynczy_zimowy(get_field('tytul'), get_field('termin'), get_field('opis'), get_field('opis_extra'), get_field('zdj')) ?>
 
         <p><?php echo $wyjazd_zimowy->title ?></p>
-        <p><?php echo $wyjazd_zimowy->photo ?></p>
+        <img className='zdjecieWyrozniajace' alt={product.acf.zdj.id} src=<?php echo $wyjazd_zimowy->photo ?> width="500" height="300" />
         <p><?php echo $wyjazd_zimowy->date ?></p>
         <p><?php echo $wyjazd_zimowy->description ?></p>
         <p><?php echo $wyjazd_zimowy->description_extra ?></p>
