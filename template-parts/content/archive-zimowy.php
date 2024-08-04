@@ -20,13 +20,17 @@ do_action('kadence_hero_header');
                     <?php
                     require_once("zimowy.php");
                     $wyjazd_zimowy = new pojedynczy_zimowy(get_field('tytul'), get_field('termin'), get_field('opis'), get_field('opis_extra'), get_field('zdj')) ?>
-
-                    <h1><?php echo $wyjazd_zimowy->title ?></h1>
-                    <img className='zdjecieWyrozniajace' alt={product.acf.zdj.id} src=<?php echo $wyjazd_zimowy->photo ?> width="500" height="300" />
-                    <p><?php echo $wyjazd_zimowy->date ?></p>
-                    <p><?php echo $wyjazd_zimowy->description ?></p>
-                    <td> <a href="<?php the_permalink(); ?>"> Zobacz</a></td>
-                    <!-- <p><?php echo $wyjazd_zimowy->description_extra ?></p> -->
+                    <!-- WPIS -->
+                    <div class="container">
+                        <h1><?php echo $wyjazd_zimowy->title ?></h1>
+                        <img className='zdjecieWyrozniajace' alt={product.acf.zdj.id} src=<?php echo $wyjazd_zimowy->photo ?> width="500" height="300" />
+                        <p><?php echo $wyjazd_zimowy->date ?></p>
+                        <p><?php echo $wyjazd_zimowy->description ?></p>
+                        <!-- <td> <a href="<?php the_permalink(); ?>"> Zobacz</a></td> -->
+                        <a type="button" class="btn btn-outline-secondary" href="<?php the_permalink(); ?>">Zobacz więcej</a>
+                        <!-- <p><?php echo $wyjazd_zimowy->description_extra ?></p> -->
+                    </div>
+                    <!-- KONIEC WPISU -->
                 <?php endwhile; ?>
             <?php endif; ?>
             <?php {

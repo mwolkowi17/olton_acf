@@ -25,9 +25,18 @@ add_action('wp_enqueue_scripts', 'child_theme_configurator_css', 10);
 
 // END ENQUEUE PARENT ACTION
 
+//add mystyle
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
 function my_theme_enqueue_styles()
 {
     wp_enqueue_style('my-theme-extra-style', get_theme_file_uri('mystyles.css'));
+};
+
+//adding bootstrap
+add_action('wp_enqueue_scripts', 'add_bootstrap');
+function add_bootstrap()
+{
+    wp_enqueue_style('boot_style', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
+    wp_enqueue_script('boot_script', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js');
 };
