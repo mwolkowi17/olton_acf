@@ -11,7 +11,7 @@
  */
 do_action('kadence_hero_header');
 ?>
-<div class="test_x">Test</div>
+<!-- <div class="test_x">Test</div> -->
 <div id="primary" class="content-area">
     <div class="content-container site-container">
         <main id="main" class="site-main" role="main">
@@ -22,7 +22,7 @@ do_action('kadence_hero_header');
                         require_once("zimowy.php");
                         $wyjazd_zimowy = new pojedynczy_zimowy(get_field('tytul'), get_field('termin'), get_field('opis'), get_field('opis_extra'), get_field('zdj')) ?>
                         <!-- WPIS -->
-                        <div class="container">
+                        <div>
                             <div class=" item_single">
                                 <div class="row">
                                     <h1><?php echo $wyjazd_zimowy->title ?></h1>
@@ -30,7 +30,9 @@ do_action('kadence_hero_header');
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <img className='zdjecieWyrozniajace' alt='zdjecie wyrozniajace' src=<?php echo $wyjazd_zimowy->photo ?> width="300" height="150" />
+
+                                        <img alt='zdjecie wyrozniajace' src=<?php echo $wyjazd_zimowy->photo ?> width="300" height="150" />
+
                                     </div>
                                     <div class="col">
 
@@ -44,9 +46,10 @@ do_action('kadence_hero_header');
                             <!-- KONIEC WPISU -->
                         <?php endwhile; ?>
                     <?php endif; ?>
-                    <?php {
-                        get_template_part('template-parts/content/error');
-                    }
+                    <?php
+                    // {
+                    //     get_template_part('template-parts/content/error');
+                    // }
                     /**
                      * Hook for anything after main content
                      */
